@@ -126,7 +126,7 @@ def create_api():
 		type = data.get('audioFileType', None)
 		
 		if type is None:
-			return "bad request", 400
+			return "The request is invalid: 400 bad request", 400
 		audio_type = audiofiletype.get(type)
 		metadata = data.get("audioFileMetadata")
 		
@@ -137,7 +137,7 @@ def create_api():
 		if type == 'podcast':
 			participent = metadata.get('participents', None)
 			if participent is None or len(participent) > 10 or any(i for i in participent if len(i) > 100):
-				return "400 bad request", 400
+				return "The request is invalid: 400 bad request", 400
 		try:
 			audio_obj = audio_type(**metadata)
 			db.session.add(audio_obj)
@@ -145,8 +145,8 @@ def create_api():
 			db.session.close()
 			return "200 ok", 200
 		except:
-			return "bad request", 400
-	return "bad request method", 400
+			return "The request is invalid: 400 bad request", 400
+	return "The request is invalid: 400 bad request", 400
 
 
 @blueprint.route("/api/v1/update/<audioFileType>/<audioFileID>", methods=['PUT'])
@@ -154,22 +154,22 @@ def update_api(audioFileType, audioFileID):
 	if request.method == 'PUT':
 		request_data = request.json
 		if audioFileType not in audiofiletype:
-			return "bad request", 400
+			return "The request is invalid: 400 bad request", 400
 		audio_file_obj = audiofiletype.get(audioFileType)
 		metadata = request_data.get("audioFileMetadata")
 		metadata['uploaded_time'] = datetime.datetime.utcnow()
 		try:
 			audio_obj = audio_file_obj.query.filter_by(id=int(audioFileID))
 			if not metadata:
-				return "bad request", 400
+				return "The request is invalid: 400 bad request", 400
 			
 			audio_obj.update(dict(metadata))
 			db.session.commit()
 			db.session.close()
 			return "200 ok", 200
 		except:
-			return "bad request", 200
-	return "bad request", 400
+			return "The request is invalid: 400 bad request", 200
+	return "The request is invalid: 400 bad request", 400
 
 
 @blueprint.route("/api/v1/delete/<audioFileType>/<audioFileID>", methods=['DELETE'])
@@ -177,19 +177,19 @@ def delete_api(audioFileType, audioFileID):
 	if request.method == 'DELETE':
 		
 		if audioFileType not in audiofiletype:
-			return "bad request", 400
+			return "The request is invalid: 400 bad request", 400
 		audio_file_obj = audiofiletype.get(audioFileType)
 		try:
 			audio_obj = audio_file_obj.query.filter_by(id=int(audioFileID))
 			if not audio_obj.one():
-				return "bad request", 400
+				return "The request is invalid: 400 bad request", 400
 			audio_obj.delete()
 			db.session.commit()
 			db.session.close()
 			return "200 ok", 200
 		except:
-			return "bad request", 400
-	return "bad request", 400
+			return "The request is invalid: 400 bad request", 400
+	return "The request is invalid: 400 bad request", 400
 
 
 @blueprint.route("/api/v1/get/<audioFileType>", methods=['GET'], defaults={"audioFileID": None})
@@ -197,7 +197,7 @@ def delete_api(audioFileType, audioFileID):
 def get_api(audioFileType, audioFileID):
 	if request.method == 'GET':
 		if audioFileType not in audiofiletype:
-			return "bad request", 400
+			return "The request is invalid: 400 bad request", 400
 		audio_obj = audiofiletype.get(audioFileType)
 		data = None
 		try:
@@ -209,5 +209,5 @@ def get_api(audioFileType, audioFileID):
 				data = [i.as_dict() for i in data]
 			return jsonify({"data": data}), 200
 		except:
-			return "400 bad request", 400
-	return "400 bad request", 400
+			return "The request is invalid: 400 bad request", 400
+	return "The request is invalid: 400 bad request", 400
