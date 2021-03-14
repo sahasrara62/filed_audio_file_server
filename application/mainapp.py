@@ -9,15 +9,17 @@ import os
 
 
 def create_app(config_object="application.settings"):
-	"""Create application factory, as explained here: http://flask.pocoo.org/docs/patterns/appfactories/.
-
-    :param config_object: The configuration object to use.
-    """
+	"""
+	Create application factory, as explained here:
+	http://flask.pocoo.org/docs/patterns/appfactories/.
+	
+	:param config_object: The configuration object to use."""
+	
 	app = Flask(__name__.split(".")[0])
 	app.config.from_object(config_object)
 	register_extensions(app)
 	register_blueprints(app)
-
+	
 	return app
 
 

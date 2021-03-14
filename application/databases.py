@@ -16,6 +16,7 @@ class CRUDMixin(object):
 		"""Create a new record and save it the database."""
 		instance = cls(**kwargs)
 		return instance.save()
+	
 	def update(self, commit=True, **kwargs):
 		"""Update specific fields of a record."""
 		for attr, value in kwargs.items():
@@ -33,14 +34,11 @@ class CRUDMixin(object):
 		"""Remove the record from the database."""
 		db.session.delete(self)
 		return commit and db.session.commit()
-	
-	
 
 
 class Model(CRUDMixin, db.Model):
 	"""Base model class that includes CRUD convenience methods."""
 	__abstract__ = True
-	
 
 
 # From Mike Bayer's "Building the application" talk
@@ -53,20 +51,20 @@ class SurrogatePK(object):
 	@classmethod
 	def get_by_id(cls, record_id):
 		"""Get record by ID."""
-		if any((isinstance(record_id, basestring) and record_id.isdigit(),isinstance(record_id, (int, float)),)):
+		if any((isinstance(record_id, basestring) and record_id.isdigit(), isinstance(record_id, (int, float)),)):
 			return cls.query.get(int(record_id))
 		return None
 	
 	def as_dict(self):
 		return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
+
 def reference_col(
 		tablename, nullable=False, pk_name="id", foreign_key_kwargs=None, column_kwargs=None
 ):
 	"""Column that adds primary key foreign key reference.
-	Usage: ::
-	    category_id = reference_col('category')
-	    category = relationship('Category', backref='categories')
+	Usage: :: category_id = reference_col('category')
+	category = relationship('Category', backref='categories')
 	"""
 	foreign_key_kwargs = foreign_key_kwargs or {}
 	column_kwargs = column_kwargs or {}
