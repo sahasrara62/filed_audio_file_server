@@ -1,0 +1,445 @@
+{
+	"info": {
+		"_postman_id": "cd095094-5b4c-4f31-9ff6-c3b0213c85ab",
+		"name": "filed_audio_server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get request  /api/v1/get/<audioFileType>/<audioFileID>",
+			"item": [
+				{
+					"name": "localhost:5000/api/v1/get/<audioFileType>/<audioFileID>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/get/audio",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"get",
+								"audio"
+							]
+						},
+						"description": "Get API:\n- The route “<audioFileType>/<audioFileID>” will return the specific audio\nfile\n- The route “<audioFileType>” will return all the audio files of that type\n"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/api/v1/get/audio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/get/audiobook",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"get",
+								"audiobook"
+							]
+						},
+						"description": "this api will return all the audiobook data present in the server  in format\n\n{\n    \"data\":[\n               {\n            \"author\": \"<author name>\",\n            \"duration_time\": \"<duration time>\",\n            \"id\": <audiofileid>,\n            \"narrator\": \"<narrator>\",\n            \"title\": \"<title>\",\n            \"uploaded_time\": \"<time>\"\n        },\n        {\n            \"author\": \"<author name>\",\n            \"duration_time\": \"<duration time>\",\n            \"id\": <audiofileid>,\n            \"narrator\": \"<narrator>\",\n            \"title\": \"<title>\",\n            \"uploaded_time\": \"<time>\"\n        },\n        {\n            \"author\": \"<author name>\",\n            \"duration_time\": \"<duration time>\",\n            \"id\": <audiofileid>,\n            \"narrator\": \"<narrator>\",\n            \"title\": \"<title>\",\n            \"uploaded_time\": \"<time>\"\n        }\n    ]\n\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/api/v1/get/audio/6",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/get/audio/6",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"get",
+								"audio",
+								"6"
+							]
+						},
+						"description": "this api will return audiobook data for a particular id present in the server  in format\nreturn format\n{\n    \"data\": [\n        {\n            \"author\": \"<author name>\",\n            \"duration_time\": <duration time in int>,\n            \"id\": <id>,\n            \"narrator\": \"<narrator name>\",\n            \"title\": \"<title>\",\n            \"uploaded_time\": \"<timestamp\"\n        }\n    ]\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/api/v1/get/song",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/get/song",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"get",
+								"song"
+							]
+						},
+						"description": "this api will return all the song data present in the server  in format\n\n{\n    \"data\": [\n        {\n            \"duration_time\": <duration in seconds>,\n            \"id\": <id>,\n            \"name\": \"<song name>\",\n            \"uploaded_time\": \"time stamp\"\n        },\n        {\n            \"duration_time\": <duration in seconds>,\n            \"id\": <id>,\n            \"name\": \"<song name>\",\n            \"uploaded_time\": \"time stamp\"\n        },\n        {\n            \"duration_time\": <duration in seconds>,\n            \"id\": <id>,\n            \"name\": \"<song name>\",\n            \"uploaded_time\": \"time stamp\"\n        }\n    ]\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/api/v1/get/song/12",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/get/song/12",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"get",
+								"song",
+								"12"
+							]
+						},
+						"description": "this api will return all the song data present in the server  in format\n\n{\n    \"data\": [\n        {\n            \"duration_time\": <suration>,\n            \"id\": <id>,\n            \"name\": \"name\",\n            \"uploaded_time\": \"time stamp\"\n        }\n    ]\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/api/v1/get/podcast",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/get/podcast",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"get",
+								"podcast"
+							]
+						},
+						"description": "this api will return all the podcast data present in the server  in format\n\n{\n    \"data\": [\n       {\n            \"duration_time\": <duration time>,\n            \"host\": \"host anme\",\n            \"id\": id,\n            \"name\": \"name\",\n            \"participents\": \"<participent data>\",\n            \"uploaded_time\": \"upload time\"\n        },\n        {\n            \"duration_time\": <duration time>,\n            \"host\": \"host anme\",\n            \"id\": id,\n            \"name\": \"name\",\n            \"participents\": \"<participent data>\",\n            \"uploaded_time\": \"upload time\"\n        },\n        {\n            \"duration_time\": <duration time>,\n            \"host\": \"host anme\",\n            \"id\": id,\n            \"name\": \"name\",\n            \"participents\": \"<participent data>\",\n            \"uploaded_time\": \"upload time\"\n        }\n    ]\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/api/v1/get/podcast/13",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/get/podcast/13",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"get",
+								"podcast",
+								"13"
+							]
+						},
+						"description": "this api will return all the podcast data , having a particualr id present in the server  in format\n\n{\n    \"data\": [\n        {\n            \"duration_time\": <duration time>,\n            \"host\": \"name\",\n            \"id\": <id>,\n            \"name\": \"name\",\n            \"participents\": \"<participent data>\",\n            \"uploaded_time\": \"time\"\n        }\n    ]\n}"
+					},
+					"response": []
+				}
+			],
+			"description": "THIS API PROVIDE THE AUDIO TYPE DATA PRESENT IN THE DATABASE. \n\nif only audioFileType is provided, then it provide all the data present in that <audioFileType> database\n\nif <audioFileID> is also provided then , provide data associated with that id in <audioFileType> database"
+		},
+		{
+			"name": "delete \"/api/v1/delete/<audioFIleType>/<audioFIleID>",
+			"item": [
+				{
+					"name": "localhost:5000/api/v1/delete/podcast/6",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/delete/podcast/11",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"delete",
+								"podcast",
+								"11"
+							]
+						},
+						"description": "delete the <audioFileType> = podcast having <audioFileID>=6, from the <audioFileType> (podcast) table."
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/api/v1/delete/song/7",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/delete/song/113",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"delete",
+								"song",
+								"113"
+							]
+						},
+						"description": "delete the record form <audioFileType> = song, having id <audioFileID>= 7 from , <audioFileType> database"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/api/v1/delete/audio/7",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/delete/audiobook/5",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"delete",
+								"audiobook",
+								"5"
+							]
+						},
+						"description": "delete the record form <audioFileType> = audio, having id <audioFileID>= 7 from , <audioFileType> database"
+					},
+					"response": []
+				}
+			],
+			"description": "Delete the record present in <audioFileType> having id <audioFileID>"
+		},
+		{
+			"name": "create /api/v1/create",
+			"item": [
+				{
+					"name": "/api/v1/create (podcast)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"audioFileType\":\"podcast\",\n    \"audioFileMetadata\":{\n            \"uploaded_time\":\"0\",\n            \"duration_time\":102,\n            \"name\":\"in the end.mp4\",\n            \"host\":\"linkin park - arizona park\",\n            \"participents\":[\"linkin park\",\"us\",\"american band\"]\n\n    \n    }\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"create"
+							]
+						},
+						"description": "add a podcast  dataobject in audio server according to audio file\n\n{\n    \"audioFileType\":\"podcast\",\n    \"audioFileMetadata\":{\n            \"uploaded_time\":\"0\",\n            \"duration_time\":102,\n            \"name\":\"in the end.mp4\",\n            \"host\":\"linkin park - arizona park\",\n            \"participents\":[\"linkin park\",\"us\",\"american band\"]\n\n    \n    }\n    \n}"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/create (audiosong type)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"audioFileType\":\"audiobook\",\n    \"audioFileMetadata\":{\n            \"uploaded_time\":\"0\",\n            \"duration_time\":102,\n            \"title\":\"in the end.mp4\",\n            \"author\":\"linkin park\",\n            \"narrator\":\"linkin park\"\n\n    \n    }\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"create"
+							]
+						},
+						"description": "add a dataobject in audio server according to audio file\n\n{\n    \"audioFileType\":\"audio\",\n    \"audioFileMetadata\":{\n            \"uploaded_time\":\"0\",\n            \"duration_time\":102,\n            \"title\":\"in the end.mp4\",\n            \"author\":\"linkin park\",\n            \"narrator\":\"linkin park\"\n\n    \n    }\n    \n}"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/create  (for song audiotype)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"audioFileType\":\"song\",\n    \"audioFileMetadata\":{\n            \"uploaded_time\":\"0\",\n            \"duration_time\":102,\n            \"name\":\"in the end.mp4\"\n\n    \n    }\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"create"
+							]
+						},
+						"description": " creating a song data in song table\n\n{\n    \"audioFileType\":\"song\",\n    \"audioFileMetadata\":{\n            \"uploaded_time\":\"0\",\n            \"duration_time\":102,\n            \"name\":\"in the end.mp4\"\n\n    \n    }\n    \n}"
+					},
+					"response": []
+				}
+			],
+			"description": "create the audio data in the database\n\n{\n    \"audioFileType\":\"<type of audio file>\",\n    \"audioFileMetadata\":\n            <\"meta data for different audiofiletype in key value pair\"> \n\n\n \n\n}"
+		},
+		{
+			"name": "update request: /api/v1/update/<audioFileType>/<audioFIleID>",
+			"item": [
+				{
+					"name": "/api/v1/update/song/1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"audioFileType\":\"song\",\n    \"audioFileMetadata\":{\n            \"uploaded_time\":\"0\",\n            \"duration_time\":102,\n            \"name\":\"in the end - metoria by linkin park.mp4\"\n\n    \n    }\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/update/song/14",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"update",
+								"song",
+								"14"
+							]
+						},
+						"description": "update song audiotype table having id 1\n\nrequest data \n\n{\n    \"audioFileType\":\"song\",\n    \"audioFileMetadata\":{\n            \"uploaded_time\":\"0\",\n            \"duration_time\":102,\n            \"name\":\"in the end - metoria by linkin park.mp4\"\n\n    \n    }\n    \n}"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/update/podcast/13",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"audioFileType\":\"podcast\",\n    \"audioFileMetadata\":{\n            \"uploaded_time\":\"0\",\n            \"duration_time\":102,\n            \"name\":\"linkin park in the end.mp4\",\n            \"host\":\"linkin park - arizona park\",\n            \"participents\":[\"linkin park\",\"us\",\"american band\"]\n\n    \n    }\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/update/podcast/13",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"update",
+								"podcast",
+								"13"
+							]
+						},
+						"description": "update song audiotype table having id 13\n\n{\n    \"audioFileType\":\"podcast\",\n    \"audioFileMetadata\":{\n            \"uploaded_time\":\"0\",\n            \"duration_time\":102,\n            \"name\":\"linkin park in the end.mp4\",\n            \"host\":\"linkin park - arizona park\",\n            \"participents\":[\"linkin park\",\"us\",\"american band\"]\n\n    \n    }\n    \n}"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/update/audio/13",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"audioFileType\":\"audiobook\",\n    \"audioFileMetadata\":{\n            \"uploaded_time\":\"0\",\n            \"duration_time\":102,\n            \"title\":\"in the end.mp4\",\n            \"author\":\"linkin park- mike shindoda\",\n            \"narrator\":\"linkin park\"\n\n    \n    }\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/update/audiobook/13",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"update",
+								"audiobook",
+								"13"
+							]
+						},
+						"description": "update audiobook audiotype table having id 13\n\n{\n    \"audioFileType\":\"audio\",\n    \"audioFileMetadata\":{\n            \"uploaded_time\":\"0\",\n            \"duration_time\":102,\n            \"title\":\"in the end.mp4\",\n            \"author\":\"linkin park- mike shindoda\",\n            \"narrator\":\"linkin park\"\n\n    \n    }\n    \n}"
+					},
+					"response": []
+				}
+			],
+			"description": "update the record of <audioFileType> table having id <audioFileID>"
+		}
+	]
+}
