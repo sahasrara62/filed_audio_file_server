@@ -2,10 +2,6 @@
 
 This is Test challenge by filed
 
-##### ***developer : prashant rana***
-##### ***email : uchiha.rana62@gmail.com***
-##### system used: kubutnu 20.04 lts
-##### database used: postgresql
 
 ##setup the system
 
